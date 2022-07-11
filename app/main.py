@@ -1,3 +1,4 @@
+from re import I
 from fastapi import FastAPI
 from app.routes import home, users
 from app.db import database, User
@@ -5,7 +6,6 @@ from app.db import database, User
 # from app.database.db import Base
 
 app = FastAPI(title="FastAPI, Docker, and Traefik")
-
 
 @app.get("/")
 async def read_root():
