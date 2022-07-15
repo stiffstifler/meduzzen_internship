@@ -1,7 +1,6 @@
-from re import I
 from fastapi import FastAPI
 from app.routes import home, users
-from app.db import database, User
+from app.db import db
 # from app.database.session import engine
 # from app.database.db import Base
 
