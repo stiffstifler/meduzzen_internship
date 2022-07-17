@@ -5,19 +5,7 @@ from app.models.schemas import SignUp
 from app.models.schemas import SignIn
 from pydantic import EmailStr
 
-router = APIRouter(tags=['home'])
-
-@router.get('/')
-async def home_page():
-    return {
-        "message": "Hello pal"
-    }
-
-@router.get('/test')
-async def test_page(id: int):
-    return await get_test_something(id)
-
-# db + validator
+router = APIRouter(tags=['users'])
 
 @router.get('/SignUp')
 def SignUp(f_name: str, l_name: str, age: int, city: str, email: EmailStr, password: str):
