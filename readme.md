@@ -36,3 +36,7 @@ https://testdriven.io/blog/fastapi-docker-traefik/
 
 # Pydantic
 https://pydantic-docs.helpmanual.io/
+
+
+# Асинхронность в Python
+https://www.youtube.com/watch?v=ZGfv_yRLBiY&list=PLlWXhlUMyooawilqK4lPXRvxtbYiw34S8

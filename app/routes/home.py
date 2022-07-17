@@ -7,19 +7,6 @@ from pydantic import EmailStr
 
 router = APIRouter(tags=['users'])
 
-@router.get('/')
-async def home_page():
-    return {
-        "message": "Hello pal"
-    }
-
-
-@router.get('/test')
-async def test_page(id: int):
-    return await get_test_something(id)
-
-# db + validator
-
 @router.get('/SignUp')
 def SignUp(f_name: str, l_name: str, age: int, city: str, email: EmailStr, password: str):
     return {f_name, l_name, age, city, email, password}
