@@ -1,3 +1,17 @@
+1. Creating a project directory:
+    $ python3 -m venv venv
+    $ source venv/bin/activate
+    $ pip3 install -r requirements.txt
+
+2. Creating build:
+    docker-compose up —build
+
+
+
+
+
+
+
 # ПОЛЕЗНЫЕ ССЫЛКИ
 
 # B1

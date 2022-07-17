@@ -1,14 +1,18 @@
 from fastapi import FastAPI
 from app.routes import home, users
 from app.db import db
+import databases
+from app.core.config import settings
 # from app.database.session import engine
 # from app.database.db import Base
 
 app = FastAPI(title="FastAPI, Docker, and Traefik")
+database = databases.Database(settings.db_url)
+
 
 @app.get("/")
 async def read_root():
-    return await User.objects.all()
+    return await db.User.objects.all()
 
 
 @app.on_event("startup")
@@ -16,13 +20,14 @@ async def startup():
     if not database.is_connected:
         await database.connect()
     # create a dummy entry
-    await User.objects.get_or_create(email="test@test.com")
+    await db.User.objects.get_or_create(email="test@test.com")
 
 
 @app.on_event("shutdown")
 async def shutdown():
     if database.is_connected:
         await database.disconnect()
+
 
 
 

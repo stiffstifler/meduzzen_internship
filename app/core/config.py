@@ -1,7 +1,6 @@
 # app/config.py
 
 import os
-
 from pydantic import BaseSettings, Field
 
 

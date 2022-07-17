@@ -5,13 +5,14 @@ from app.models.schemas import SignUp
 from app.models.schemas import SignIn
 from pydantic import EmailStr
 
-router = APIRouter(tags=['home'])
+router = APIRouter(tags=['users'])
 
 @router.get('/')
 async def home_page():
     return {
         "message": "Hello pal"
     }
+
 
 @router.get('/test')
 async def test_page(id: int):
